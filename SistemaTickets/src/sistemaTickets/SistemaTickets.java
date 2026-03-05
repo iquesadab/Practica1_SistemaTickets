@@ -27,7 +27,8 @@ public class SistemaTickets {
             System.out.println("\n===== SISTEMA DE TICKETS =====\n" +
                     "1. Menú Usuario\n" +
                     "2. Menú Administrador\n" +
-                    "3. Salir");
+                    "3. Salir\n" +
+                    "Seleccione una opción:");
             opcion = scanner.nextInt();
             scanner.nextLine();
 
@@ -58,7 +59,8 @@ public class SistemaTickets {
             System.out.println("\n--- MENU USUARIO ---\n" +
                             "1. Crear Ticket\n" +
                             "2. Buscar Ticket Resuelto\n" +
-                            "3. Volver al menú principal\n");
+                            "3. Volver al menú principal\n" +
+                            "Seleccione una opción:");
             opcion = scanner.nextInt();
             scanner.nextLine();
 
@@ -102,7 +104,7 @@ public class SistemaTickets {
 
     public void buscarTicketResuelto() {
 
-        System.out.println("Ingrese el ID del ticket: ");
+        System.out.println("\nIngrese el ID del ticket: ");
         int id = scanner.nextInt();
 
         Ticket encontrado = resueltos.buscarPorId(id);
@@ -110,7 +112,7 @@ public class SistemaTickets {
         if (encontrado == null) {
             System.out.println("El ticket aún está pendiente.");
         } else {
-            System.out.println("Ticket encontrado: \n");
+            System.out.println("\nTicket encontrado: \n");
             System.out.println(encontrado);
         }
     }
@@ -123,7 +125,8 @@ public class SistemaTickets {
             System.out.println("\n--- MENU ADMINISTRADOR ---\n" +
                             "1. Ver ticket pendiente\n" +
                             "2. Resolver ticket\n" +
-                            "3. Volver al menú principal\n");
+                            "3. Volver al menú principal\n" +
+                            "Seleccione una opción:");
             opcion = scanner.nextInt();
             scanner.nextLine();
 
@@ -153,7 +156,7 @@ public class SistemaTickets {
         if (ticket == null) {
             System.out.println("No hay tickets pendientes.");
         } else {
-            System.out.println("Ticket al frente:");
+            System.out.println("\nTicket al frente:");
             System.out.println(ticket);
         }
     }
@@ -171,7 +174,7 @@ public class SistemaTickets {
 
         resueltos.insertarAlFinal(ticket);
 
-        System.out.println("Ticket resuelto:");
+        System.out.println("\nTicket resuelto:");
         System.out.println(ticket);
     }
 
